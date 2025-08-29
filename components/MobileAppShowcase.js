@@ -11,21 +11,23 @@ const appsData = [
     id: 1,
     name: "FarahGPT",
     description:
-      "Streamline your productivity with our intuitive task management app. Features include smart scheduling, team collaboration, and progress tracking.",
+      "AI Islamic Assistant. For Muslims, by Muslims. In a digital world brimming with AI assistants, FarahGPT is an AI Islamic Assistant built for Muslims, ensuring answers that align with your faith and lifestyle.",
     visitLink: "https://farahgpt.com",
     screenshot: "/screenshots/farahgpt-screenshot.webp",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.app.farahgpt",
     appStoreLink: "https://apps.apple.com/us/app/farahgpt/id6746275409",
+    color: "#2a9d8f",
   },
   {
     id: 2,
     name: "Muslifie",
     description:
-      "Your personal fitness companion with AI-powered workout plans, nutrition tracking, and real-time progress analytics.",
+      "Your all-in-one travel app for Muslims who have difficulty finding halal food and prayer destinations. Connect with our community of travelers and local guides.",
     visitLink: "https://muslifie.com",
     screenshot: "/screenshots/muslifie-screenshot.webp",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.app.muslifie",
     appStoreLink: "https://apps.apple.com/app/muslifie/id6746275409",
+    color: "#d25f8f",
   },
 ];
 
@@ -78,14 +80,22 @@ const MobileAppShowcase = () => {
 
   return (
     <section
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16"
+      id="projects"
+      className="min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24"
       role="region"
       aria-label="Mobile App Showcase"
     >
       {/* Header */}
       <div className="text-center mb-12 lg:mb-16">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4">Our Mobile Applications</h1>
-        <p className="text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+        <motion.div
+          className="mx-auto h-1.5 bg-gradient-to-r from-accent via-(--danger) to-secondary rounded-full"
+          initial={{ width: 0 }}
+          whileInView={{ width: "220px" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
+        <p className="mt-4 text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
           Discover our collection of innovative mobile apps designed to enhance your daily life and productivity
         </p>
       </div>
@@ -105,7 +115,12 @@ const MobileAppShowcase = () => {
               className="space-y-6"
             >
               <div>
-                <h2 className="text-4xl sm:text-3xl lg:text-5xl font-black text-primary mb-4">{currentAppData.name}</h2>
+                <h2
+                  className="text-4xl sm:text-3xl lg:text-5xl font-black text-secondary mb-4"
+                  style={{ color: currentAppData.color }}
+                >
+                  {currentAppData.name}
+                </h2>
                 <p className="text-foreground/80 text-base sm:text-lg leading-relaxed">{currentAppData.description}</p>
               </div>
 
@@ -114,7 +129,8 @@ const MobileAppShowcase = () => {
                   href={currentAppData.visitLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-info text-secondary-foreground rounded-lg hover:bg-info/90 transition-colors duration-200 font-medium"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-secondary-foreground rounded-lg hover:opacity-90 bg-secondary transition-colors duration-200 font-medium"
+                  style={{ backgroundColor: currentAppData.color }}
                   aria-label={`Visit ${currentAppData.name} website`}
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -132,8 +148,9 @@ const MobileAppShowcase = () => {
                     <div
                       key={index}
                       className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                        index === currentApp ? "bg-info" : "bg-border"
+                        index === currentApp ? "bg-primary" : "bg-border"
                       }`}
+                      style={index === currentApp ? { backgroundColor: currentAppData.color } : {}}
                     />
                   ))}
                 </div>
@@ -157,7 +174,7 @@ const MobileAppShowcase = () => {
               >
                 {/* Animated Glowing Background */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-[500px] sm:w-72 sm:h-[550px] lg:w-80 lg:h-[600px] rounded-3xl animate-pulse-glow bg-gradient-to-r from-secondary/50 via-accent/60 to-info/50 blur-xl"></div>
+                  <div className="w-64 h-[500px] sm:w-72 sm:h-[550px] lg:w-80 lg:h-[600px] rounded-3xl animate-pulse-glow bg-gradient-to-r from-secondary/50 via-accent/60 to-primary/50 blur-xl"></div>
                 </div>
 
                 {/* Secondary glow layer */}
@@ -246,7 +263,8 @@ const MobileAppShowcase = () => {
                 <button
                   onClick={prevApp}
                   disabled={isAnimating}
-                  className="flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="flex items-center justify-center w-12 h-12 text-primary-foreground rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
+                  style={{ backgroundColor: currentAppData.color }}
                   aria-label="Previous app"
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -255,7 +273,8 @@ const MobileAppShowcase = () => {
                 <button
                   onClick={nextApp}
                   disabled={isAnimating}
-                  className="flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="flex items-center justify-center w-12 h-12 text-primary-foreground rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
+                  style={{ backgroundColor: currentAppData.color }}
                   aria-label="Next app"
                 >
                   <ChevronRight className="w-6 h-6" />
