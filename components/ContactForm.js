@@ -102,8 +102,10 @@ const ContactForm = () => {
               </svg>
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Message Sent!</h2>
-          <p className="text-gray-600 leading-relaxed">We&apos;ll get back to you within 24 hours.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Thanks for Reaching Out!</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Your message means a lot to us. Together, we can make this mission stronger — we&apos;ll be in touch soon.
+          </p>
         </motion.div>
       </div>
     );
@@ -112,7 +114,7 @@ const ContactForm = () => {
   return (
     <section
       id="contact-us"
-      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50 flex items-center justify-center px-4 py-20"
+      className="min-h-screen bg-gradient-to-br from-primary via-secondary to-purple flex items-center justify-center px-4 py-28"
     >
       <div className="w-full max-w-6xl mx-auto">
         {/* Header Section */}
@@ -124,14 +126,16 @@ const ContactForm = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="inline-block bg-gradient-to-r from-(--secondary-light)/40 to-secondary/20 text-(--secondary-dark) px-6 py-3 rounded-full text-sm font-semibold mb-4 shadow-sm">
-              Ask Us A Question
+            <div className="inline-block bg-white text-primary px-6 py-3 rounded-full text-sm font-semibold mb-4 shadow-sm">
+              Join Our Journey
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">We&apos;re Here To Help You</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+              Let&apos;s Build Something Meaningful Together
+            </h1>
 
             <motion.div
-              className="mx-auto h-1.5 bg-gradient-to-r from-accent via-(--danger) to-secondary rounded-full"
+              className="mx-auto h-1.5 bg-gradient-to-r from-accent via-danger to-purple rounded-full"
               initial={{ width: 0 }}
               whileInView={{ width: "220px" }}
               viewport={{ once: true }}
@@ -143,9 +147,10 @@ const ContactForm = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg text-primary-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Share your thoughts and Help us improve Muslifie
+              We’re on a mission to create tools that make a difference. If our vision resonates with you, we’d love to
+              hear from you.
             </motion.p>
           </motion.div>
         </div>
@@ -162,7 +167,7 @@ const ContactForm = () => {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-white/80 backdrop-blur-sm px-6 py-10 md:p-12 rounded-2xl shadow-xl border border-white/20">
+          <div className="bg-white/60 backdrop-blur-lg px-6 py-10 md:p-12 rounded-2xl shadow-xl border border-white/20">
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               {inputs.map((input, index) => (
@@ -205,7 +210,7 @@ const ContactForm = () => {
                 </div>
                 <Textarea
                   name="message"
-                  placeholder="Tell us about your project..."
+                  placeholder="Your meaningful words here..."
                   value={formData.message}
                   onChange={handleChange}
                   maxLength={500}
@@ -238,13 +243,15 @@ const ContactForm = () => {
 
             {/* Footer */}
             <motion.div
-              className="mt-8 text-center text-sm text-gray-500"
+              className="mt-8 text-center text-sm text-gray-700"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <p>We typically respond within 24 hours • Your information is secure and confidential</p>
+              <p>
+                Believe in our mission? Let’s start the conversation. Your voice matters in shaping what we’re building.
+              </p>
             </motion.div>
           </div>
         </motion.div>

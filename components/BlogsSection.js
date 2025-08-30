@@ -12,9 +12,7 @@ const BlogSection = () => {
   const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
   // const [sortBy, setSortBy] = useState("latest"); // 'latest', 'popular', 'featured'
 
-  const demoPosts = [
-    muslifieBlogPost,
-  ];
+  const demoPosts = [muslifieBlogPost];
 
   // const categories = ["all", "Technology", "Mobile Development", "UX Design", "Web Development"];
 
@@ -48,12 +46,12 @@ const BlogSection = () => {
   };
 
   return (
-    <section id="blog" className="min-h-screen bg-gradient-to-br from-primary/10 via-background to-secondary/5">
+    <section id="blog" className="min-h-screen bg-white pt-18 lg:pt-16">
       {/* Header Section */}
-      <div className="text-center pt-12 mb-12 lg:pt-16 lg:mb-16">
+      <div className="text-center mb-12 lg:mb-16">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4">Our Muslifie App Blog</h1>
         <motion.div
-          className="mx-auto h-1.5 bg-gradient-to-r from-accent via-(--danger) to-secondary rounded-full"
+          className="mx-auto h-1.5 bg-gradient-to-r from-accent via-danger to-purple rounded-full"
           initial={{ width: 0 }}
           whileInView={{ width: "220px" }}
           viewport={{ once: true }}

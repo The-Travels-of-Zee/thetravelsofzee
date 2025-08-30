@@ -13,6 +13,7 @@ import {
   Linkedin,
   Youtube,
   Github,
+  Download,
 } from "lucide-react";
 import { socialLinks } from "@/constants";
 import Link from "next/link";
@@ -76,9 +77,9 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background with Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple to-primary">
         <div className="absolute inset-0 bg-gradient-to-tr from-background/20 via-transparent to-info/30"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iNCIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>
+        <div className="absolute inset-0 w-full h-full bg-no-repeat bg-cover bg-center bg-[url('/images/desert.webp')] opacity-30"></div>
       </div>
 
       {/* Floating Elements */}
@@ -146,10 +147,10 @@ const HeroSection = () => {
             variants={slideUpVariants}
             className="mb-6"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-tight">
-              <span className="block">Transforming Your</span>
-              <span className="block bg-gradient-to-r from-accent via-info to-accent bg-clip-text text-transparent animate-gradient-x">
-                Digital Experience
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-tight">
+              <span className="block">Building technology</span>
+              <span className="block bg-warning bg-clip-text text-transparent animate-gradient-x">
+                for a Muslim World
               </span>
             </h1>
           </motion.div>
@@ -163,7 +164,7 @@ const HeroSection = () => {
           >
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl md:text-2xl text-primary-foreground/80 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-lg sm:text-xl md:text-2xl text-secondary-foreground max-w-4xl mx-auto leading-relaxed font-light"
             >
               Discover innovative solutions that elevate your daily life to new heights. We craft exceptional digital
               experiences that inspire, engage, and deliver results.
@@ -177,14 +178,14 @@ const HeroSection = () => {
             animate={isVisible ? "visible" : "hidden"}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Link href="#contact-us">
+            <Link href="#projects">
               <motion.button
                 variants={scaleIn}
                 whileHover={{ scale: 1.05, boxShadow: "0 25px 50px rgba(0,0,0,0.2)" }}
                 whileTap={{ scale: 0.95 }}
-                className="group flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center"
+                className="group flex items-center gap-3 px-8 py-4 bg-warning text-accent-foreground rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center"
               >
-                <span>Get Started</span>
+                <span>Explore Our Apps</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             </Link>
@@ -195,8 +196,8 @@ const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
               className="group flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary-foreground/30 text-primary-foreground rounded-full font-semibold text-lg backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300 min-w-[200px] justify-center"
             >
-              <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Watch Demo</span>
+              <Download className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span>Download Our Apps</span>
             </motion.button> */}
           </motion.div>
 
@@ -209,14 +210,14 @@ const HeroSection = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap justify-center gap-8 sm:gap-12 text-primary-foreground/70"
+              className="flex flex-wrap justify-center gap-8 sm:gap-12 text-secondary-foreground"
             >
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-accent fill-current" />
+                <Star className="w-5 h-5 text-warning fill-current" />
                 <span className="text-sm sm:text-base">4.9/5 Rating</span>
               </div>
               <div className="flex items-center gap-2">
-                <FaCrown className="w-5 h-5 text-accent fill-current" />
+                <FaCrown className="w-5 h-5 text-warning fill-current" />
                 <span className="text-sm sm:text-base">Award Winning</span>
               </div>
             </motion.div>
@@ -237,7 +238,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="flex items-center justify-center w-12 h-12 bg-primary-foreground/10 text-primary-foreground rounded-full backdrop-blur-sm hover:bg-primary-foreground/20 hover:scale-110 transition-all duration-300"
+                  className="flex items-center justify-center w-12 h-12 bg-secondary-foreground/10 text-secondary-foreground rounded-full backdrop-blur-sm hover:bg-secondary-foreground/20 hover:scale-110 transition-all duration-300"
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -259,14 +260,14 @@ const HeroSection = () => {
         transition={{ delay: 2, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="flex flex-col items-center gap-2 text-primary-foreground/60">
+        <div className="flex flex-col items-center gap-2 text-secondary-foreground">
           <span className="text-sm font-light">Scroll to explore</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-secondary-foreground rounded-full flex justify-center"
           >
-            <div className="w-1 h-3 bg-primary-foreground/40 rounded-full mt-2"></div>
+            <div className="w-1 h-3 bg-secondary-foreground rounded-full mt-2"></div>
           </motion.div>
         </div>
       </motion.div>

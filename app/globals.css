@@ -41,7 +41,7 @@
 
 :root {
   /* Base */
-  --color-background: #fffbf3;
+  --color-background: #fceff4;
   --color-foreground: #171717;
   --color-border: #e5e7eb; /* light gray border for separation */
 
@@ -65,9 +65,11 @@
   --color-danger: #e76f51; /* Burnt Sienna */
   --color-danger-foreground: #ffffff;
 
+  --color-purple: #d25f8f;
+
   /* Status / Extra Utilities */
   --color-success: #2a9d8f; /* reuse Persian Green */
-  --color-warning: #e9c46a; /* reuse Saffron */
+  --color-warning: #fcda86; /* reuse Saffron */
   --font-amiri: "Amiri-Bold", sans-serif;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -104,7 +106,7 @@
 }
 
 @theme inline {
-  --color-background: #fffbf3;
+  --color-background: #fceff4;
   --color-foreground: #171717;
   --color-border: #e5e7eb;
 
@@ -124,7 +126,9 @@
   --color-danger-foreground: #ffffff;
 
   --color-success: #2a9d8f;
-  --color-warning: #e9c46a;
+  --color-warning: #fcda86;
+
+  --color-purple: #d25f8f;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -651,7 +655,6 @@ button {
   }
 }
 
-
 /* Blog Page Specific Styles */
 
 /* Line clamp utilities for text truncation */
@@ -702,9 +705,7 @@ button {
 
 /* Search input enhancements */
 .search-input:focus {
-  box-shadow: 
-    0 0 0 2px var(--color-primary),
-    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 2px var(--color-primary), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Category filter pills */
@@ -747,25 +748,37 @@ button {
 
 /* Newsletter section enhancements */
 .newsletter-section {
-  background: linear-gradient(135deg, var(--color-primary)/10 0%, var(--color-secondary)/10 50%, var(--color-accent)/10 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) / 10 0%,
+    var(--color-secondary) / 10 50%,
+    var(--color-accent) / 10 100%
+  );
   position: relative;
   overflow: hidden;
 }
 
 .newsletter-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, var(--color-accent)/5 0%, transparent 50%);
+  background: radial-gradient(circle, var(--color-accent) / 5 0%, transparent 50%);
   animation: pulse-newsletter 6s ease-in-out infinite;
 }
 
 @keyframes pulse-newsletter {
-  0%, 100% { opacity: 0.3; transform: scale(0.8); }
-  50% { opacity: 0.8; transform: scale(1.2); }
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
 }
 
 /* Blog stats section */
@@ -784,12 +797,12 @@ button {
     height: auto;
     max-height: none;
   }
-  
+
   .blog-list-view .blog-card .blog-image {
     flex: none;
     height: 200px;
   }
-  
+
   .blog-list-view .blog-card .blog-content {
     padding: 1.5rem;
   }
@@ -800,7 +813,7 @@ button {
   .blog-card {
     border: 2px solid var(--color-border);
   }
-  
+
   .category-pill {
     border: 1px solid currentColor;
   }
@@ -811,11 +824,11 @@ button {
   .blog-card {
     transition: none;
   }
-  
+
   .blog-card:hover {
     transform: none;
   }
-  
+
   .skeleton-loading {
     animation: none;
   }
@@ -828,7 +841,7 @@ button {
   .search-controls {
     display: none;
   }
-  
+
   .blog-card {
     break-inside: avoid;
     box-shadow: none;
@@ -842,7 +855,7 @@ button {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
   }
-  
+
   .search-input {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
@@ -873,4 +886,289 @@ button {
 
 .blog-page::-webkit-scrollbar-thumb:hover {
   background: var(--color-secondary);
+}
+
+/* Company Banner Section Styles */
+
+/* Enhanced gradient animations */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.company-banner {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Islamic geometric pattern overlay */
+.islamic-pattern {
+  background-image: radial-gradient(circle at 25% 25%, var(--color-accent) / 10 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, var(--color-info) / 10 2px, transparent 2px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+}
+
+/* Animated counter styles */
+.counter-animation {
+  transition: all 0.3s ease;
+}
+
+.counter-number {
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
+  display: inline-block;
+}
+
+/* Glowing effect for stats */
+.stat-glow {
+  position: relative;
+}
+
+.stat-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--color-accent) / 20, var(--color-info) / 20, var(--color-secondary) / 20);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.stat-glow:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced card hover effects */
+.value-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary-foreground) / 5, transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card:hover::before {
+  opacity: 1;
+}
+
+.value-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Mission and vision card styling */
+.mission-card,
+.vision-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before,
+.vision-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* World map animation */
+.world-map-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.pulse-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--color-accent);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(233, 196, 106, 0);
+  }
+}
+
+/* Enhanced text effects */
+.gradient-text {
+  background: linear-gradient(45deg, var(--color-accent), var(--color-info), var(--color-accent));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Icon animation effects */
+.floating-icon {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+/* Statistics animation */
+.stat-container {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-container:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .company-banner h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .company-banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Enhanced accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .company-banner * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .floating-icon,
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .company-banner {
+    background: var(--color-primary) !important;
+  }
+
+  .mission-card,
+  .vision-card,
+  .stat-container {
+    border: 2px solid var(--color-primary-foreground);
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Print optimization */
+@media print {
+  .company-banner {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .floating-icon,
+  .pulse-dot {
+    display: none;
+  }
+}
+
+/* Focus styles for interactive elements */
+.company-banner button:focus-visible,
+.company-banner [tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced backdrop effects */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-morphism:hover {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px) saturate(1.8);
 }
