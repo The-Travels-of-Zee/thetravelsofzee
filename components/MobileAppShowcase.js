@@ -9,17 +9,6 @@ import { useSwipeable } from "react-swipeable";
 const appsData = [
   {
     id: 1,
-    name: "FarahGPT",
-    description:
-      "AI Islamic Assistant. For Muslims, by Muslims. In a digital world brimming with AI assistants, FarahGPT is an AI Islamic Assistant built for Muslims, ensuring answers that align with your faith and lifestyle.",
-    visitLink: "https://farahgpt.com",
-    screenshot: "/screenshots/farahgpt-screenshot.webp",
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.app.farahgpt",
-    appStoreLink: "https://apps.apple.com/us/app/farahgpt/id6746275409",
-    color: "#2a9d8f",
-  },
-  {
-    id: 2,
     name: "Muslifie",
     description:
       "Your all-in-one travel app for Muslims who have difficulty finding halal food and prayer destinations. Connect with our community of travelers and local guides.",
@@ -28,6 +17,17 @@ const appsData = [
     playStoreLink: "https://play.google.com/store/apps/details?id=com.app.muslifie",
     appStoreLink: "https://apps.apple.com/app/muslifie/id6746275409",
     color: "#d25f8f",
+  },
+  {
+    id: 2,
+    name: "FarahGPT",
+    description:
+      "AI Islamic Assistant. For Muslims, by Muslims. In a digital world brimming with AI assistants, FarahGPT is an AI Islamic Assistant built for Muslims, ensuring answers that align with your faith and lifestyle.",
+    visitLink: "https://farahgpt.com",
+    screenshot: "/screenshots/farahgpt-screenshot.webp",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.app.farahgpt",
+    appStoreLink: "https://apps.apple.com/us/app/farahgpt/id6746275409",
+    color: "#2a9d8f",
   },
 ];
 
@@ -81,7 +81,7 @@ const MobileAppShowcase = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24"
+      className="min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-18 lg:py-24"
       role="region"
       aria-label="Mobile App Showcase"
     >
@@ -89,7 +89,7 @@ const MobileAppShowcase = () => {
       <div className="text-center mb-12 lg:mb-16">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4">Our Mobile Applications</h1>
         <motion.div
-          className="mx-auto h-1.5 bg-gradient-to-r from-accent via-(--danger) to-secondary rounded-full"
+          className="mx-auto h-1.5 bg-gradient-to-r from-accent via-danger to-purple rounded-full"
           initial={{ width: 0 }}
           whileInView={{ width: "220px" }}
           viewport={{ once: true }}

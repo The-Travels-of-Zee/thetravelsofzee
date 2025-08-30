@@ -52,7 +52,7 @@ const Navbar = () => {
                   key={index}
                   href={href}
                   className={`relative font-medium transition-all duration-300 hover:scale-105 group ${
-                    scrolled ? "text-gray-700 hover:text-emerald-600" : "text-white/90 hover:text-white"
+                    scrolled ? "text-gray-700 hover:text-emerald-600" : "text-secondary-foreground hover:text-white"
                   }`}
                 >
                   {title}
@@ -70,7 +70,8 @@ const Navbar = () => {
               >
                 Login
               </button> */}
-              <Link href="#contact-us">
+              <span className="text-secondary-foreground font-medium">{topNavbar.subtitle}</span>
+              <Link href="/contact-us">
                 <button className="px-6 py-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/80 text-white rounded-lg font-medium transition-all duration-300 transform cursor-pointer hover:scale-105 shadow-lg hover:shadow-xl">
                   {topNavbar?.cta || "Talk to Us"}
                 </button>
@@ -148,7 +149,7 @@ const Navbar = () => {
               <User size={20} className="inline mr-3" />
               Login
             </button> */}
-            <Link href="#contact-us" onClick={closeMenu}>
+            <Link href="/contact-us" onClick={closeMenu}>
               <button className="w-full p-4 bg-gradient-to-r from-primary to-(--primary-light) text-white rounded-xl font-medium hover:from-primary/90 hover:to-(--primary-light)/90 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg">
                 {topNavbar?.cta || "Talk to Us"}
               </button>

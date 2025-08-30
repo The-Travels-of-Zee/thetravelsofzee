@@ -3,7 +3,8 @@ import { FaFacebook, FaLinkedinIn, FaEnvelope, FaBehance } from "react-icons/fa"
 import { PiInstagramLogoFill } from "react-icons/pi";
 
 export const topNavbar = {
-  cta: "Get in Touch",
+  cta: "Let's Talk",
+  subtitle: "Believe in our mission?",
   disableWidthAnimation: false,
   hideAppStore: true,
   hideGooglePlay: true,
