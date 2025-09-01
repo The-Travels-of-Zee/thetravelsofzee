@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link href="/" className="flex-1">
               <img
                 src="/favicons/full-logo-black.png"
-                className={`w-64 h-full ${scrolled ? "" : "invert"}`}
+                className={`w-52 h-full ${scrolled ? "" : "invert"}`}
                 alt="Website-Logo"
               />
             </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between pl-6 pr-3 py-4 border-b border-gray-200">
             <Link href="/">
               <div className="flex items-center space-x-3">
-                <img src="/favicons/full-logo-black.png" className="w-48 h-full" alt="Website-Logo" />
+                <img src="/favicons/full-logo-black.png" className="w-40 h-full" alt="Website-Logo" />
               </div>
             </Link>
             <button
@@ -150,7 +150,7 @@ const Navbar = () => {
               Login
             </button> */}
             <Link href="/contact-us" onClick={closeMenu}>
-              <button className="w-full p-4 bg-gradient-to-r from-primary to-(--primary-light) text-white rounded-xl font-medium hover:from-primary/90 hover:to-(--primary-light)/90 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button className="w-full p-4 bg-gradient-to-r from-primary to-primary/80 text-white rounded-xl font-medium hover:from/90 hover:to-primary/80 cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg">
                 {topNavbar?.cta || "Talk to Us"}
               </button>
             </Link>
