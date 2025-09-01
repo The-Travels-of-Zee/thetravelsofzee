@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, Grid, List, TrendingUp, Clock, Star } from "lucide-react";
+import { Search, Filter, Grid, List, TrendingUp, Clock, Star, ArrowRight } from "lucide-react";
 import BlogCard from "@/components/BlogCard";
 import { muslifieBlogPost } from "@/constants";
+import Link from "next/link";
 
 const BlogSection = () => {
   // const [searchTerm, setSearchTerm] = useState("");
@@ -41,6 +42,18 @@ const BlogSection = () => {
       y: 0,
       transition: {
         duration: 0.5,
+      },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
       },
     },
   };
@@ -167,6 +180,17 @@ const BlogSection = () => {
               </div>
             </motion.div>
           )}
+          <motion.button
+            variants={scaleIn}
+            whileHover={{ scale: 1.05, boxShadow: "0 25px 50px rgba(0,0,0,0.2)" }}
+            whileTap={{ scale: 0.95 }}
+            className="group flex items-center gap-3 px-8 py-4 bg-warning text-accent-foreground rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center mt-8"
+          >
+            <Link href="https://muslifie.com/blog" target="_blank" className="flex items-center gap-3">
+              <span>All Blogs</span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </motion.button>
         </div>
       </section>
 

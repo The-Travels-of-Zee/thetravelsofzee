@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import BlogSection from "@/components/BlogsSection";
 import OurMission from "@/components/OurMission";
 import OurVision from "@/components/OurVision";
+import SocialPosts from "@/components/SocialPosts";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <MobileAppShowcase />
       <OurVision />
       <BlogSection />
+      <SocialPosts />
       {/* <ContactForm /> */}
     </main>
   );

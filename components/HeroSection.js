@@ -14,6 +14,7 @@ import {
   Youtube,
   Github,
   Download,
+  Plus,
 } from "lucide-react";
 import { socialLinks } from "@/constants";
 import Link from "next/link";
@@ -147,10 +148,10 @@ const HeroSection = () => {
             variants={slideUpVariants}
             className="mb-6"
           >
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-tight">
-              <span className="block">Building technology</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-tight">
+              <span className="block">Building The Apps</span>
               <span className="block bg-warning bg-clip-text text-transparent animate-gradient-x">
-                for a Muslim World
+                of Tomorrow, Today!
               </span>
             </h1>
           </motion.div>
@@ -164,10 +165,9 @@ const HeroSection = () => {
           >
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl md:text-2xl text-secondary-foreground max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-xl sm:text-2xl md:text-3xl text-secondary-foreground max-w-4xl mx-auto leading-relaxed font-light"
             >
-              Discover innovative solutions that elevate your daily life to new heights. We craft exceptional digital
-              experiences that inspire, engage, and deliver results.
+              For Muslims, By Muslims
             </motion.p>
           </motion.div>
 
@@ -185,8 +185,8 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group flex items-center gap-3 px-8 py-4 bg-warning text-accent-foreground rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center"
               >
-                <span>Explore Our Apps</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <span>Follow Us</span>
+                <Plus className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             </Link>
 

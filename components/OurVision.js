@@ -32,7 +32,7 @@ const OurVision = () => {
   useEffect(() => {
     if (isInView) {
       const targets = {
-        users: 250000,
+        users: 50000,
         countries: 160,
         downloads: 100000,
         apps: 2,
@@ -139,22 +139,27 @@ const OurVision = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Vision Statement */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <div className="max-w-4xl mx-auto bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
-            <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4 flex items-center justify-center gap-3">
-              <Rocket className="w-8 h-8 text-accent" />
-              Our Vision
-            </h2>
-            <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              To build a digital ecosystem that uplifts Muslims everywhere — connecting hearts, minds, and souls through
-              technology that honors our faith while embracing the future. We envision a world where every Muslim has
-              access to tools that strengthen their relationship with Allah, enhance their daily practice, and foster
-              global unity.
-            </p>
-          </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-center mb-16"
+        >
+          {/* Vision Statement */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <div className="max-w-4xl mx-auto bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4 flex items-center justify-center gap-3">
+                <Rocket className="w-8 h-8 text-accent" />
+                Our Commitment in Action
+              </h2>
+              <p className="text-lg text-primary-foreground/90 leading-relaxed">
+                We are dedicated to turning faith-driven values into practical solutions. Through innovative digital
+                tools, accessible resources, and global connections, we help Muslims strengthen their spiritual
+                practice, nurture community bonds, and live their deen with confidence in a modern world.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
-
         {/* Global Impact Stats */}
         <motion.div
           variants={containerVariants}
@@ -165,13 +170,13 @@ const OurVision = () => {
           {[
             {
               icon: Users,
-              label: "Muslims Served",
+              label: "Our Users",
               value: formatNumber(counters.users),
               color: "text-accent",
             },
             {
               icon: MapPin,
-              label: "Countries Reached",
+              label: "Countries Planned to Launch",
               value: Math.round(counters.countries),
               color: "text-info",
             },
