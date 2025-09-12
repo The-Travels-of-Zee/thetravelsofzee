@@ -1,35 +1,10 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Download } from "lucide-react";
 import { useSwipeable } from "react-swipeable";
-
-// Sample data - replace with your actual app data
-const appsData = [
-  {
-    id: 1,
-    name: "Muslifie",
-    description:
-      "Your all-in-one travel app for Muslims who have difficulty finding halal food and prayer destinations. Connect with our community of travelers and local guides.",
-    visitLink: "https://muslifie.com",
-    screenshot: "/screenshots/muslifie-screenshot.webp",
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.app.muslifie",
-    appStoreLink: "https://apps.apple.com/app/muslifie/id6746275409",
-    color: "#d25f8f",
-  },
-  {
-    id: 2,
-    name: "FarahGPT",
-    description:
-      "AI Islamic Assistant. For Muslims, by Muslims. In a digital world brimming with AI assistants, FarahGPT is an AI Islamic Assistant built for Muslims, ensuring answers that align with your faith and lifestyle.",
-    visitLink: "https://farahgpt.com",
-    screenshot: "/screenshots/farahgpt-screenshot.webp",
-    playStoreLink: "https://play.google.com/store/apps/details?id=com.app.farahgpt",
-    appStoreLink: "https://apps.apple.com/us/app/farahgpt/id6746275409",
-    color: "#2a9d8f",
-  },
-];
+import { appsData } from "@/constants";
 
 const MobileAppShowcase = () => {
   const [currentApp, setCurrentApp] = useState(0);
