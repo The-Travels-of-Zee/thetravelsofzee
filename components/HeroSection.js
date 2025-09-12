@@ -185,8 +185,8 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group flex items-center gap-3 px-8 py-4 bg-warning text-accent-foreground rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center"
               >
-                <span>Follow Us</span>
-                <Plus className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                <span>Download Our Apps</span>
+                <Download className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             </Link>
 
