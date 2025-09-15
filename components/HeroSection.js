@@ -156,21 +156,6 @@ const HeroSection = () => {
             </h1>
           </motion.div>
 
-          {/* Subheading */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            className="mb-8"
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl sm:text-2xl md:text-3xl text-secondary-foreground max-w-4xl mx-auto leading-relaxed font-light"
-            >
-              For Muslims, By Muslims
-            </motion.p>
-          </motion.div>
-
           {/* CTA Buttons */}
           <motion.div
             variants={staggerContainer}
